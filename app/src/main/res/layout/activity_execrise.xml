@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExecriseActivity">
+
+    <Button
+        android:id="@+id/chestAddButton"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:background="@android:drawable/ic_input_add"
+        app:layout_constraintStart_toEndOf="@+id/chestScrollView"
+        app:layout_constraintTop_toTopOf="@+id/chestScrollView" />
+
+    <ScrollView
+        android:id="@+id/backScrollView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chestScrollView">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:text="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:text="2" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:text="3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:text="4" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:text="5" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:text="6" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/chestScrollView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/chestButton1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+
+                <Button
+                    android:id="@+id/chestButton2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+
+                <Button
+                    android:id="@+id/chestButton3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+
+                <Button
+                    android:id="@+id/chestButton4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+
+                <Button
+                    android:id="@+id/chestButton5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+
+                <Button
+                    android:id="@+id/chestButton6"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/backAddButton"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:background="@android:drawable/ic_input_add"
+        app:layout_constraintStart_toEndOf="@+id/backScrollView"
+        app:layout_constraintTop_toTopOf="@+id/backScrollView" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chest"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/chestScrollView"
+        app:layout_constraintStart_toStartOf="@+id/chestScrollView" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/backScrollView"
+        app:layout_constraintStart_toStartOf="@+id/backScrollView" />
+
+    <CheckBox
+        android:id="@+id/backCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/backScrollView"
+        app:layout_constraintEnd_toStartOf="@+id/backScrollView"
+        app:layout_constraintTop_toTopOf="@+id/backScrollView" />
+
+    <CheckBox
+        android:id="@+id/chestCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/chestScrollView"
+        app:layout_constraintEnd_toStartOf="@+id/chestScrollView"
+        app:layout_constraintTop_toTopOf="@+id/chestScrollView" />
+
+    <Button
+        android:id="@+id/addToCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="150dp"
+        android:text="Add to calendar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/testing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backScrollView"
+        tools:layout_editor_absoluteX="175dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

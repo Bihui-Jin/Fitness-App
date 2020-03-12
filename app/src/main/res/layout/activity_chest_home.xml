@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".scrollView">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="730dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/chestPressMachineCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/chestPressMachineButton"
+                    app:layout_constraintStart_toStartOf="@+id/chestPressMachineButton"
+                    app:layout_constraintTop_toBottomOf="@+id/chestPressMachineButton" />
+
+                <CheckBox
+                    android:id="@+id/dumbbellFlyeCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/dumbbellFlyeButton"
+                    app:layout_constraintStart_toStartOf="@+id/dumbbellFlyeButton"
+                    app:layout_constraintTop_toBottomOf="@+id/dumbbellFlyeButton" />
+
+                <CheckBox
+                    android:id="@+id/inclinedDumbbellFlyeCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/inclinedDumbbellFlyeButton"
+                    app:layout_constraintStart_toStartOf="@+id/inclinedDumbbellFlyeButton"
+                    app:layout_constraintTop_toBottomOf="@+id/inclinedDumbbellFlyeButton" />
+
+                <CheckBox
+                    android:id="@+id/cableCrossoverCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/cableCrossoverButton"
+                    app:layout_constraintStart_toStartOf="@+id/cableCrossoverButton"
+                    app:layout_constraintTop_toBottomOf="@+id/cableCrossoverButton" />
+
+                <CheckBox
+                    android:id="@+id/benchPressCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/benchPressButton"
+                    app:layout_constraintStart_toStartOf="@+id/benchPressButton"
+                    app:layout_constraintTop_toBottomOf="@+id/benchPressButton" />
+
+                <Button
+                    android:id="@+id/chestPressMachineButton"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/chestpressmachine"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/cableCrossoverButton"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_marginRight="60dp"
+                    android:background="@drawable/cablecrossover"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pushupButton" />
+
+                <Button
+                    android:id="@+id/pushupButton"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_marginRight="60dp"
+                    android:background="@drawable/pushup"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/benchPressButton"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/benchpress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chestPressMachineButton" />
+
+                <Button
+                    android:id="@+id/inclinedDumbbellFlyeButton"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/inclinedumbbellflye"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/benchPressButton" />
+
+                <Button
+                    android:id="@+id/dumbbellFlyeButton"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_marginRight="60dp"
+                    android:background="@drawable/dumbbellflye"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cableCrossoverButton" />
+
+                <CheckBox
+                    android:id="@+id/pushupCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/pushupButton"
+                    app:layout_constraintStart_toStartOf="@+id/pushupButton"
+                    app:layout_constraintTop_toBottomOf="@+id/pushupButton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

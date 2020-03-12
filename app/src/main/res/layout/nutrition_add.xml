@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller.NutritionAdd">
+
+
+    <LinearLayout
+        android:id="@+id/nut_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/nutTabBar"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/foodType_vegie"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/tab_vegie"
+            android:gravity="center"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/foodType_meat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/tab_meat"
+            android:gravity="center"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/foodType_drink"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/tab_drink"
+            android:gravity="center"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/foodType_fruit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/tab_fruit"
+            android:gravity="center"
+            android:padding="5dp"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/div_white"
+        android:layout_above="@id/nut_tab_bar"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/div_tab_bar"
+        android:id="@+id/ly_content">
+
+    </FrameLayout>
+
+</RelativeLayout>
