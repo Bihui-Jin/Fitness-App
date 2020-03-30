@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.youtube.player.YouTubeApiServiceUtil;
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -13,9 +14,10 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class dumbellFlyeActivity extends YouTubeBaseActivity {
-
+public class detailExeActivity extends YouTubeBaseActivity {
     private static final String TAG = "dumbellFlyeActivity";
+    private static String videoSrc;
+    private static String textDescription;
     YouTubePlayerView youTubePlayerView;
     Button playBtn;
     YouTubePlayer.OnInitializedListener onInitializedListener;
@@ -24,14 +26,19 @@ public class dumbellFlyeActivity extends YouTubeBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dumbell_flye);
-        Log.d(TAG,"Starting.");
+        setVideo();
+        setText();
+
+    }
+
+    private void setVideo(){
         playBtn = findViewById(R.id.playButton);
         youTubePlayerView = findViewById(R.id.youtubePlay);
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d(TAG, "Onclick");
-                youTubePlayer.loadVideo("S298ziysRdI");
+                youTubePlayer.loadVideo(videoSrc);
             }
 
             @Override
@@ -48,4 +55,18 @@ public class dumbellFlyeActivity extends YouTubeBaseActivity {
             }
         });
     }
+
+    private void setText(){
+        TextView textView = findViewById(R.id.descriptiontView);
+        textView.setText(textDescription);
+    }
+
+    public static void setTextDescription(String text){
+        textDescription = text;
+    }
+
+    public static void setVideoSrc(String src){
+        videoSrc = src;
+    }
 }
+

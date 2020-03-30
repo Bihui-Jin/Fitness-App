@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BackHomeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="730dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/pullupCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/pullupButton"
+                    app:layout_constraintStart_toStartOf="@+id/pullupButton"
+                    app:layout_constraintTop_toBottomOf="@+id/pullupButton" />
+
+                <CheckBox
+                    android:id="@+id/latPulldownCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/latPulldownButton"
+                    app:layout_constraintStart_toStartOf="@+id/latPulldownButton"
+                    app:layout_constraintTop_toBottomOf="@+id/latPulldownButton" />
+
+                <CheckBox
+                    android:id="@+id/bentoverBarbellRowCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/bentoverBarbellRowButton"
+                    app:layout_constraintStart_toStartOf="@+id/bentoverBarbellRowButton"
+                    app:layout_constraintTop_toBottomOf="@+id/bentoverBarbellRowButton" />
+
+                <CheckBox
+                    android:id="@+id/dumbbellSingleArmRowCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="@+id/dumbbellSingleArmRowButton"
+                    app:layout_constraintStart_toStartOf="@+id/dumbbellSingleArmRowButton"
+                    app:layout_constraintTop_toBottomOf="@+id/dumbbellSingleArmRowButton" />
+
+                <Button
+                    android:id="@+id/bentoverBarbellRowButton"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_marginRight="60dp"
+                    android:background="@drawable/bentoverbarbellrow"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/dumbbellSingleArmRowButton"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/dumbbellsinglearmrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/latPulldownButton"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/latpulldown"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dumbbellSingleArmRowButton" />
+
+                <Button
+                    android:id="@+id/pullupButton"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_marginRight="60dp"
+                    android:background="@drawable/pullup"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bentoverBarbellRowButton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
