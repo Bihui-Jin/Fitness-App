@@ -119,7 +119,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="recommend">Recommendation</string>
+    <string name="recommend">Recommendation 100g</string>
     <string name="food1">food1</string>
     <string name="food2">food2</string>
     <string name="food3">food3</string>

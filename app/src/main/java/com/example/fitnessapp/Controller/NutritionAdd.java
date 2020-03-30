@@ -3,12 +3,12 @@ package com.example.fitnessapp.Controller;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.fitnessapp.utils.MyFragment;
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.view.FragmentDrink;
+import com.example.fitnessapp.view.FragmentFruit;
+import com.example.fitnessapp.view.FragmentMeat;
 import com.example.fitnessapp.view.FragmentVegie;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,14 +17,13 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class NutritionAdd extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView vrgie,meat,drink,fruit;
+    private TextView vegie,meat,drink,fruit;
 
-    private MyFragment fgVegie, fgMeat,fgDrink,fgFruit;
+    private FragmentVegie fragmentVegie;
+    private FragmentMeat fragmentMeat;
+    private FragmentDrink fragmentDrink;
+    private FragmentFruit fragmentFruit;
     private FragmentManager fManager;
-
-    private ImageView broccoli, carrot, lettuce, potatoes;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,28 +34,17 @@ public class NutritionAdd extends AppCompatActivity implements View.OnClickListe
         bindViews();
 
 
-        vrgie.performClick(); // default
+        vegie.performClick(); // default
     }
 
     //UI components initialize & event binding
     private void bindViews() {
-        vrgie = findViewById(R.id.foodType_vegie);
-        broccoli = findViewById(R.id.broccoli);
-        carrot = findViewById(R.id.carrot);
-        lettuce = findViewById(R.id.lettuce);
-        potatoes = findViewById(R.id.potatoes);
-
+        vegie = findViewById(R.id.foodType_vegie);
         meat = findViewById(R.id.foodType_meat);
-
         drink = findViewById(R.id.foodType_drink);
-
         fruit = findViewById(R.id.foodType_fruit);
 
-        FrameLayout ly_content = findViewById(R.id.ly_content);
-
-
-
-        vrgie.setOnClickListener(this);
+        vegie.setOnClickListener(this);
         meat.setOnClickListener(this);
         drink.setOnClickListener(this);
         fruit.setOnClickListener(this);
@@ -64,7 +52,7 @@ public class NutritionAdd extends AppCompatActivity implements View.OnClickListe
 
     //reset all text as unselected
     private void setSelected(){
-        vrgie.setSelected(false);
+        vegie.setSelected(false);
         meat.setSelected(false);
         drink.setSelected(false);
         fruit.setSelected(false);
@@ -72,10 +60,10 @@ public class NutritionAdd extends AppCompatActivity implements View.OnClickListe
 
     //hid all Fragments
     private void hideAllFragment(FragmentTransaction fragmentTransaction){
-        if(fgVegie != null)fragmentTransaction.hide(fgVegie);
-        if(fgMeat != null)fragmentTransaction.hide(fgMeat);
-        if(fgDrink != null)fragmentTransaction.hide(fgDrink);
-        if(fgFruit != null)fragmentTransaction.hide(fgFruit);
+        if(fragmentVegie != null)fragmentTransaction.hide(fragmentVegie);
+        if(fragmentMeat != null)fragmentTransaction.hide(fragmentMeat);
+        if(fragmentDrink != null)fragmentTransaction.hide(fragmentDrink);
+        if(fragmentFruit != null)fragmentTransaction.hide(fragmentFruit);
     }
 
     @Override
@@ -86,40 +74,31 @@ public class NutritionAdd extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.foodType_vegie:
                 setSelected();
-                vrgie.setSelected(true);
-                FragmentVegie fragmentVegie = new FragmentVegie();
+                vegie.setSelected(true);
+                fragmentVegie = new FragmentVegie();
                 fTransaction.add(R.id.ly_content,fragmentVegie);
                 fTransaction.show(fragmentVegie);
                 break;
             case R.id.foodType_meat:
                 setSelected();
                 meat.setSelected(true);
-                if(fgMeat == null){
-                    fgMeat = new MyFragment("Second meat Fragment");
-                    fTransaction.add(R.id.ly_content,fgMeat);
-                }else{
-                    fTransaction.show(fgMeat);
-                }
+                fragmentMeat = new FragmentMeat();
+                fTransaction.add(R.id.ly_content,fragmentMeat);
+                fTransaction.show(fragmentMeat);
                 break;
             case R.id.foodType_drink:
                 setSelected();
                 drink.setSelected(true);
-                if(fgDrink == null){
-                    fgDrink = new MyFragment("Third drink Fragment");
-                    fTransaction.add(R.id.ly_content,fgDrink);
-                }else{
-                    fTransaction.show(fgDrink);
-                }
+                fragmentDrink = new FragmentDrink();
+                fTransaction.add(R.id.ly_content,fragmentDrink);
+                fTransaction.show(fragmentDrink);
                 break;
             case R.id.foodType_fruit:
                 setSelected();
                 fruit.setSelected(true);
-                if(fgFruit == null){
-                    fgFruit = new MyFragment("Fourth fruit Fragment");
-                    fTransaction.add(R.id.ly_content,fgFruit);
-                }else{
-                    fTransaction.show(fgFruit);
-                }
+                fragmentFruit = new FragmentFruit();
+                fTransaction.add(R.id.ly_content,fragmentFruit);
+                fTransaction.show(fragmentFruit);
                 break;
         }
         fTransaction.commit();

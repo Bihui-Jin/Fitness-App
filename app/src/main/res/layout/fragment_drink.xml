@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragment_vegie"
+    android:id="@+id/fragment_drink"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp">
         <ImageView
-            android:id="@+id/backNutritionAddVegie"
+            android:id="@+id/backNutritionAddDrink"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:contentDescription="@string/back"
@@ -35,8 +35,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1.0"/>
         <ImageView
-            android:id="@+id/broccoli"
-            android:src="@drawable/broccoli"
+            android:id="@+id/milk"
+            android:src="@drawable/milk"
             android:layout_width="70dp"
             android:layout_height="70dp" />
         <View
@@ -45,8 +45,8 @@
             android:layout_weight="1.0"/>
 
         <ImageView
-            android:id="@+id/lettuce"
-            android:src="@drawable/lettuce"
+            android:id="@+id/wine"
+            android:src="@drawable/wine"
             android:layout_width="70dp"
             android:layout_height="70dp" />
         <View
@@ -73,8 +73,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1.0"/>
         <ImageView
-            android:id="@+id/carrot"
-            android:src="@drawable/carrot"
+            android:id="@+id/greenTea"
+            android:src="@drawable/greentea"
             android:layout_width="70dp"
             android:layout_height="70dp" />
 
@@ -84,8 +84,8 @@
             android:layout_weight="1.0"/>
 
         <ImageView
-            android:id="@+id/potatoes"
-            android:src="@drawable/potatoes"
+            android:id="@+id/blackTea"
+            android:src="@drawable/blacktea"
             android:layout_width="70dp"
             android:layout_height="70dp" />
         <View
@@ -112,8 +112,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1.0"/>
         <ImageView
-            android:id="@+id/spinach"
-            android:src="@drawable/spinach"
+            android:id="@+id/beer"
+            android:src="@drawable/beer"
             android:layout_width="70dp"
             android:layout_height="70dp" />
 
@@ -123,8 +123,8 @@
             android:layout_weight="1.0"/>
 
         <ImageView
-            android:id="@+id/tomato"
-            android:src="@drawable/tomato"
+            android:id="@+id/coke"
+            android:src="@drawable/coke"
             android:layout_width="70dp"
             android:layout_height="70dp" />
         <View
@@ -132,5 +132,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1.0"/>
     </LinearLayout>
+
 
 </LinearLayout>

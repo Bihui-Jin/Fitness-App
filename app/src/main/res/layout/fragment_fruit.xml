@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragment_vegie"
+    android:id="@+id/fragment_fruit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp">
         <ImageView
-            android:id="@+id/backNutritionAddVegie"
+            android:id="@+id/backNutritionAddFruit"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:contentDescription="@string/back"
@@ -35,8 +35,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1.0"/>
         <ImageView
-            android:id="@+id/broccoli"
-            android:src="@drawable/broccoli"
+            android:id="@+id/avocado"
+            android:src="@drawable/avocado"
             android:layout_width="70dp"
             android:layout_height="70dp" />
         <View
@@ -45,8 +45,8 @@
             android:layout_weight="1.0"/>
 
         <ImageView
-            android:id="@+id/lettuce"
-            android:src="@drawable/lettuce"
+            android:id="@+id/apple"
+            android:src="@drawable/apple"
             android:layout_width="70dp"
             android:layout_height="70dp" />
         <View
@@ -73,8 +73,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1.0"/>
         <ImageView
-            android:id="@+id/carrot"
-            android:src="@drawable/carrot"
+            android:id="@+id/pear"
+            android:src="@drawable/pear"
             android:layout_width="70dp"
             android:layout_height="70dp" />
 
@@ -84,8 +84,8 @@
             android:layout_weight="1.0"/>
 
         <ImageView
-            android:id="@+id/potatoes"
-            android:src="@drawable/potatoes"
+            android:id="@+id/orange"
+            android:src="@drawable/orange"
             android:layout_width="70dp"
             android:layout_height="70dp" />
         <View
@@ -112,8 +112,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1.0"/>
         <ImageView
-            android:id="@+id/spinach"
-            android:src="@drawable/spinach"
+            android:id="@+id/banana"
+            android:src="@drawable/banana"
             android:layout_width="70dp"
             android:layout_height="70dp" />
 
@@ -123,8 +123,8 @@
             android:layout_weight="1.0"/>
 
         <ImageView
-            android:id="@+id/tomato"
-            android:src="@drawable/tomato"
+            android:id="@+id/grape"
+            android:src="@drawable/grape"
             android:layout_width="70dp"
             android:layout_height="70dp" />
         <View

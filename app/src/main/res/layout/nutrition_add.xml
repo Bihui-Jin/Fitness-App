@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".Controller.NutritionAdd">
 
-
     <LinearLayout
         android:id="@+id/nut_tab_bar"
         android:layout_width="match_parent"

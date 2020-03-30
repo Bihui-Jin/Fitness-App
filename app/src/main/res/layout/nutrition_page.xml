@@ -9,6 +9,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="10dp">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -39,9 +48,9 @@
             android:layout_weight="1"/>
         <com.example.fitnessapp.view.Column
             android:id="@+id/column_calories"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"/>
         <View
             android:layout_width="0dp"
@@ -49,9 +58,9 @@
             android:layout_weight="1.7"/>
         <com.example.fitnessapp.view.Column
             android:id="@+id/column_carbos"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"/>
         <View
             android:layout_width="0dp"
@@ -59,9 +68,9 @@
             android:layout_weight="1.7"/>
         <com.example.fitnessapp.view.Column
             android:id="@+id/column_proteins"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"/>
         <View
             android:layout_width="0dp"
@@ -69,9 +78,9 @@
             android:layout_weight="1.7"/>
         <com.example.fitnessapp.view.Column
             android:id="@+id/column_fats"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"/>
         <View
             android:layout_width="0dp"
@@ -85,7 +94,7 @@
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="0.8"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -130,11 +139,79 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="@string/recommend" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ScrollView
+            android:id="@+id/recommendationImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp">
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/recomImage1"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp" />
+
+                    <ImageView
+                        android:id="@+id/recomImage2"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp" />
+
+                    <ImageView
+                        android:id="@+id/recomImage3"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp" />
+
+                    <ImageView
+                        android:id="@+id/recomImage4"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp" />
+
+                    <ImageView
+                        android:id="@+id/recomImage5"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp" />
+
+                    <ImageView
+                        android:id="@+id/recomImage6"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp" />
+
+                    <ImageView
+                        android:id="@+id/recomImage7"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp" />
+
+                    <ImageView
+                        android:id="@+id/recomImage8"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </ScrollView>
+    </LinearLayout>
+
+
+
+<!--    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <View
@@ -175,6 +252,6 @@
             android:layout_height="30dp"
             android:contentDescription="@string/refresh"
             android:src="@drawable/refresh" />
-    </LinearLayout>
+    </LinearLayout>-->
 
 </LinearLayout>
