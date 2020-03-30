@@ -35,13 +35,21 @@ public class FragmentVegie extends DialogFragment implements DialogInterface.OnC
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_vegie, null);
 
-        ImageView broccoli, carrot, lettuce, potatoes,back;
+        ImageView broccoli, carrot, lettuce, potatoes, spinach, tomato, back;
         broccoli = view.findViewById(R.id.broccoli);
         carrot = view.findViewById(R.id.carrot);
         lettuce = view.findViewById(R.id.lettuce);
         potatoes = view.findViewById(R.id.potatoes);
-        back = view.findViewById(R.id.backNutritionAdd);
+        spinach = view.findViewById(R.id.spinach);
+        tomato = view.findViewById(R.id.tomato);
+        back = view.findViewById(R.id.backNutritionAddVegie);
 
+        lettuce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog(0);
+            }
+        });
         broccoli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,22 +62,29 @@ public class FragmentVegie extends DialogFragment implements DialogInterface.OnC
                 dialog(2);
             }
         });
-        lettuce.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog(0);
-            }
-        });
         potatoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog(3);
             }
         });
+        spinach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog(4);
+            }
+        });
+        tomato.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog(5);
+            }
+        });
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent home = new Intent(getActivity().getApplicationContext(), NutritionPage.class);
+                Intent home = new Intent(getActivity(), NutritionPage.class);
                 startActivity(home);
                 getActivity().finish();
             }
@@ -77,12 +92,12 @@ public class FragmentVegie extends DialogFragment implements DialogInterface.OnC
         return view;
     }
 
-    public String currentDate(){
+    private String currentDate(){
         Calendar c = Calendar.getInstance();
         return Integer.toString(c.get(Calendar.YEAR)) +","+ Integer.toString(c.get(Calendar.MONTH))+","+ Integer.toString(c.get(Calendar.DATE));
     }
 
-    public void dialog(final int index) {
+    private void dialog(final int index) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LinearLayout linear = new LinearLayout(getActivity());
         IndicatorSeekBar bar = new IndicatorSeekBar
@@ -109,11 +124,7 @@ public class FragmentVegie extends DialogFragment implements DialogInterface.OnC
             @Override
             public void onProgressChanged(IndicatorSeekBar seekBar, int progress, float progressFloat, boolean fromUserTouch) {
                 String v = String.valueOf(progressFloat);
-                if(progressFloat < 1.0) {
-                    text.setText("\n How many pieces you have eaten:  " + v +" piece \n");
-                }else {
-                    text.setText("\n How many pieces you have eaten: " + v + " pieces \n");
-                }
+                text.setText("\n How many pieces you have eaten: " + v + " * 100g \n");
                 picecs = progressFloat;
             }
 
@@ -157,9 +168,7 @@ public class FragmentVegie extends DialogFragment implements DialogInterface.OnC
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 // User cancelled the dialog
-                Intent home = new Intent(getActivity().getApplicationContext(), NutritionAdd.class);
-                startActivity(home);
-                getActivity().finish();
+                dialog.dismiss();
             }
         });
         AlertDialog dialog = builder.create();

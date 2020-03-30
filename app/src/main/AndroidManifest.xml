@@ -20,7 +20,7 @@
         <activity android:name=".CalendarActivity" />
         <activity android:name=".NutritionActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".Controller.NutritionAdd" ></activity>
+        <activity android:name=".Controller.NutritionAdd" android:configChanges="keyboardHidden|orientation|screenSize"></activity>
         <activity android:name=".Controller.NutritionPage" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".loginActivity">
             <intent-filter>
