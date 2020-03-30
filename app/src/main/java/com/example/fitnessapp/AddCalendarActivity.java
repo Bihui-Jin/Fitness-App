@@ -21,6 +21,7 @@ import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessapp.ui.login.LoginViewModel;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 
@@ -43,39 +44,27 @@ public class AddCalendarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_calendar);
-//        SharedPreferences sharedPreferences = getSharedPreferences("chestDate", MODE_PRIVATE);
-//        sharedPreferences.edit().clear().commit();
-
         compactCalendarView = findViewById(R.id.addCalendarView);
         compactCalendarView.setUseThreeLetterAbbreviation(true);
         loadDaylist();
-
-
-
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);
 //        actionBar.setTitle(dateFormat.format());
-
         connectTo(actionBar);
-
-
-
     }
 
 
     private void connectTo(final ActionBar actionBar){
-
 //        CalendarView calendar = findViewById(R.id.workOutcalendarView);
 //        calendar.setMinDate(System.currentTimeMillis() - 1000);
-
         compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
                 Long datel = dateClicked.getTime();
-                Context context = getApplicationContext();
                 int month = dateClicked.getMonth();
                 int dtime = dateClicked.getDate();
-                String date = "" + (month+1) + "/" + dtime;
+                String date = month+1 + "/" + dtime;
+
                 alert(date, datel);
             }
 
@@ -90,27 +79,41 @@ public class AddCalendarActivity extends AppCompatActivity {
     }
 
     private void getStatus(String date){
+        if(ChoiceSet.getChest()){
+            // get to know which exercise are selected
+            SharedPreferences sharedPreferences1 = getSharedPreferences("chest", MODE_PRIVATE);
+            boolean benchPress = sharedPreferences1.getBoolean(getString(R.string.benchPress),false);
+            boolean inclineDumbbellFlye = sharedPreferences1.getBoolean(getString(R.string.inclineDumbbellFlye), false);
+            boolean cableCrossover = sharedPreferences1.getBoolean(getString(R.string.cableCrossover), false);
+            boolean pushup = sharedPreferences1.getBoolean(getString(R.string.pushup),false);
+            boolean chestPressMachine = sharedPreferences1.getBoolean(getString(R.string.chestPressMachine),false);
+            boolean dumbbellFlye = sharedPreferences1.getBoolean(getString(R.string.dumbbellFlye), false);
+            String mesg = "push up: " + pushup +"\n" + "bench press: " + benchPress + "\n" + "incline dumbbell flye: " + inclineDumbbellFlye + "\n" + "cable cross over: " + cableCrossover + "\n" + "chest press machine: " + chestPressMachine +
+                    "\n" + "dumbbell flye: " + dumbbellFlye + "\n";
+            Log.v("hello", mesg );
 
-        // get to know which exercise are selected
-        SharedPreferences sharedPreferences1 = getSharedPreferences("chest", MODE_PRIVATE);
-        boolean benchPress = sharedPreferences1.getBoolean(getString(R.string.benchPress),true);
-        boolean inclineDumbbellFlye = sharedPreferences1.getBoolean(getString(R.string.inclineDumbbellFlye), true);
-        boolean cableCrossover = sharedPreferences1.getBoolean(getString(R.string.cableCrossover), true);
-        boolean pushup = sharedPreferences1.getBoolean(getString(R.string.pushup),true);
-        boolean chestPressMachine = sharedPreferences1.getBoolean(getString(R.string.chestPressMachine),true);
-        boolean dumbbellFlye = sharedPreferences1.getBoolean(getString(R.string.dumbbellFlye), true);
-
-        if(benchPress) addToCalendar(date, getString(R.string.benchPress));
-        if(inclineDumbbellFlye) addToCalendar(date, getString(R.string.inclineDumbbellFlye));
-        if(cableCrossover) addToCalendar(date, getString(R.string.cableCrossover));
-        if(pushup) addToCalendar(date, getString(R.string.pushup));
-        if(chestPressMachine) addToCalendar(date, getString(R.string.chestPressMachine));
-        if(dumbbellFlye) addToCalendar(date, getString(R.string.dumbbellFlye));
-
-
+            if(benchPress) addToCalendar(date, getString(R.string.benchPress), "chestDate");
+            if(inclineDumbbellFlye) addToCalendar(date, getString(R.string.inclineDumbbellFlye), "chestDate");
+            if(cableCrossover) addToCalendar(date, getString(R.string.cableCrossover), "chestDate");
+            if(pushup) addToCalendar(date, getString(R.string.pushup), "chestDate");
+            if(chestPressMachine) addToCalendar(date, getString(R.string.chestPressMachine), "chestDate");
+            if(dumbbellFlye) addToCalendar(date, getString(R.string.dumbbellFlye), "chestDate");
+        }
+        else if(ChoiceSet.getBack()){
+            SharedPreferences sharedPreferences = getSharedPreferences("back", MODE_PRIVATE);
+            boolean pullup = sharedPreferences.getBoolean(getString(R.string.pullup),true);
+            boolean latpulldown = sharedPreferences.getBoolean(getString(R.string.latPulldown), true);
+            boolean dumbbellsinglearmrow = sharedPreferences.getBoolean(getString(R.string.dumbBellSingleArmRow), true);
+            boolean bentoverbarbellrow = sharedPreferences.getBoolean(getString(R.string.bentOverBarbellRow),false);
+            if(pullup) addToCalendar(date, getString(R.string.pullup), "backDate");
+            if(latpulldown) addToCalendar(date, getString(R.string.latPulldown), "backDate");
+            if(dumbbellsinglearmrow) addToCalendar(date, getString(R.string.dumbBellSingleArmRow), "backDate");
+            if(bentoverbarbellrow) addToCalendar(date, getString(R.string.bentOverBarbellRow), "backDate");
+        }
+        ChoiceSet.undo();
     }
-    private void addToCalendar(String date, String exe){
-        SharedPreferences sharedPreferences = getSharedPreferences("chestDate", MODE_PRIVATE);
+    private void addToCalendar(String date, String exe, String type){
+        SharedPreferences sharedPreferences = getSharedPreferences(type, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Set<String> result = sharedPreferences.getStringSet(date, new HashSet<String>());
         result.add(exe);
@@ -133,10 +136,11 @@ public class AddCalendarActivity extends AppCompatActivity {
                         dayList.add(datel.toString());
                         getStatus(date);
                         addEvent(datel);
-                        for(String str: dayList){
-//                addEvent(Long.parseLong(str));
-                            Log.v("daylist!!!!", str);
-                        }
+                        SharedPreferences sharedPreferences = getSharedPreferences("chosenDay", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean(date,true);
+                        editor.apply();
+                        Log.v("dateToo", date);
                         saveDayList();
                     }
                 }

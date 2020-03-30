@@ -57,7 +57,6 @@ public class ChestHomeActivity extends AppCompatActivity {
 
     private void userChoice(){
         final CheckBox checkBox1 = findViewById(R.id.benchPressCheckBox);
-
         final CheckBox checkBox2 = findViewById(R.id.inclinedDumbbellFlyeCheckBox);
         final CheckBox checkBox3 = findViewById(R.id.cableCrossoverCheckBox);
         final CheckBox checkBox4 = findViewById(R.id.pushupCheckBox);

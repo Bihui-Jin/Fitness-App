@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".dumbellFlyeActivity" />
+        <activity android:name=".TutorialActivity"/>
+        <activity android:name=".BackHomeActivity" />
+        <activity android:name=".detailExeActivity" />
         <activity android:name=".ViewDateExecrise" />
         <activity android:name=".AddCalendarActivity" />
         <activity android:name=".scrollView" />
@@ -20,8 +22,8 @@
         <activity android:name=".CalendarActivity" />
         <activity android:name=".NutritionActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".Controller.NutritionAdd" android:configChanges="keyboardHidden|orientation|screenSize"></activity>
-        <activity android:name=".Controller.NutritionPage" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".Controller.NutritionAdd" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".Controller.NutritionPage" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".loginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

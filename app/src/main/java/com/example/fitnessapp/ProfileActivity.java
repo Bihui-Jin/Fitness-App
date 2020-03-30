@@ -3,6 +3,7 @@ package com.example.fitnessapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         setLogoutButton();
         cleanHisotry();
+        setTutorialButton();
 
     }
 
@@ -55,7 +57,26 @@ public class ProfileActivity extends AppCompatActivity {
         settings.edit().clear().apply();
         SharedPreferences settings2 = context.getSharedPreferences("ExeDate", Context.MODE_PRIVATE);
         settings2.edit().clear().apply();
+        SharedPreferences settings3 = context.getSharedPreferences("chosenDay", Context.MODE_PRIVATE);
+        settings3.edit().clear().apply();
         Toast.makeText(context, "done",Toast.LENGTH_SHORT).show();
 
+    }
+
+    private void setTutorialButton(){
+        Button finishBtn = findViewById(R.id.ToTutorialButton);
+        finishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                goTutorialPage();
+
+            }
+        });
+    }
+
+    private void goTutorialPage(){
+        Intent intent = new Intent(this, TutorialActivity.class);
+        startActivity(intent);
     }
 }

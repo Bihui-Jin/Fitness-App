@@ -2,7 +2,9 @@ package com.example.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -50,12 +52,6 @@ public class loginActivity extends AppCompatActivity {
         getHeight();
         getWeight();
         setButton();
-
-
-
-
-
-
 
     }
     private void setDate_getDob(){
@@ -122,15 +118,22 @@ public class loginActivity extends AppCompatActivity {
                         this));
     }
 
+
+
+    private void goTutorialPage(){
+        Intent intent = new Intent(this, TutorialActivity.class);
+        startActivity(intent);
+    }
+
     private void setButton(){
         Button finishBtn = findViewById(R.id.loginFinishButton);
         finishBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(user_gender !=null & user_goal != null & user_dob != null
-                & user_height != null & user_weight != null){
+                        & user_height != null & user_weight != null){
                     storeData();
-                    goHomePage();
+                    alert();
                 }
             }
         });
@@ -138,6 +141,11 @@ public class loginActivity extends AppCompatActivity {
 
     private void goHomePage(){
         Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+
+    private void goTutorial(){
+        Intent intent = new Intent(this, TutorialActivity.class);
         startActivity(intent);
     }
 
@@ -238,6 +246,35 @@ public class loginActivity extends AppCompatActivity {
     private boolean loginStatus(){
         SharedPreferences sharedPreferences = getSharedPreferences("login_status", MODE_PRIVATE);
         return sharedPreferences.getBoolean(getString(R.string.login_status),false);
+    }
+
+
+    private void alert(){
+//        final Context context = getApplicationContext();
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setMessage("Do you want to go through a tutorial? (You can always find the tutorial at profile)");
+        alertDialog.setCancelable(true);
+        alertDialog.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        goTutorial();
+                    }
+                }
+        );
+        alertDialog.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        goHomePage();
+                    }
+                }
+        );
+        AlertDialog alertDialog1 = alertDialog.create();
+        alertDialog1.show();
+
     }
 
 
