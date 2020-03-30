@@ -6,9 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -59,6 +62,20 @@ public class ProfileActivity extends AppCompatActivity {
         settings2.edit().clear().apply();
         SharedPreferences settings3 = context.getSharedPreferences("chosenDay", Context.MODE_PRIVATE);
         settings3.edit().clear().apply();
+
+        String cDate;
+        Calendar c = Calendar.getInstance();
+        cDate = Integer.toString(c.get(Calendar.YEAR)) +","+ Integer.toString(c.get(Calendar.MONTH))+","+ Integer.toString(c.get(Calendar.DATE));
+        SharedPreferences settings4 = context.getSharedPreferences(cDate, Context.MODE_PRIVATE);
+        Log.d(cDate,(settings4.getString(cDate,"null")));
+        settings4.edit().clear().apply();
+        SharedPreferences settings5 = context.getSharedPreferences("FoodIntake", Context.MODE_PRIVATE);
+        settings5.edit().clear().apply();
+        for(int i=0; i< 23;i++) {
+            SharedPreferences settings6 = context.getSharedPreferences(Integer.toString(i), Context.MODE_PRIVATE);
+            settings6.edit().clear().apply();
+        }
+
         Toast.makeText(context, "done",Toast.LENGTH_SHORT).show();
 
     }
