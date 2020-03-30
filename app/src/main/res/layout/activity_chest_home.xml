@@ -132,7 +132,7 @@
                     android:layout_marginRight="60dp"
                     android:background="@drawable/dumbbellflye"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cableCrossoverButton" />
+                    app:layout_constraintTop_toTopOf="@+id/cableCrossoverCheckBox" />
 
                 <CheckBox
                     android:id="@+id/pushupCheckBox"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dumbellFlyeActivity">
+    tools:context=".detailExeActivity">
 
     <view
         android:id="@+id/youtubePlay"
@@ -27,11 +27,10 @@
         app:layout_constraintTop_toBottomOf="@+id/youtubePlay" />
 
     <TextView
-        android:id="@+id/descriptiontextView"
+        android:id="@+id/descriptiontView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="The chest fly or pectoral fly (abbreviated to pec fly) primarily works the pectoralis major muscles to move the arms horizontally forward. If medially (internally) rotated, it is assisted in this by the anterior (front) head of the deltoideus in transverse flexion. If laterally (externally) rotated, the contribution of the deltoid is lessened and the pec major is strongly emphasized as the transverse adductor"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

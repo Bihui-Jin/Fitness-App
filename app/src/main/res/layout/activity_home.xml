@@ -8,15 +8,6 @@
 
 
     <Button
-        android:id="@+id/minusWaterButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ic_remove"
-        app:layout_constraintEnd_toEndOf="@+id/waterImageView"
-        app:layout_constraintStart_toStartOf="@+id/waterImageView"
-        app:layout_constraintTop_toBottomOf="@+id/waterImageView" />
-
-    <Button
         android:id="@+id/execriseButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
@@ -73,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
-        android:text="Execrise"
+        android:text="Exercise"
         android:textSize="18dp"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/execriseButton" />
@@ -111,24 +102,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileButton" />
 
-    <Button
-        android:id="@+id/addWaterButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ic_add"
-        app:layout_constraintBottom_toTopOf="@+id/waterImageView"
-        app:layout_constraintEnd_toEndOf="@+id/waterImageView"
-        app:layout_constraintStart_toStartOf="@+id/waterImageView" />
-
-    <Button
-        android:id="@+id/waterImageView"
-        android:layout_width="77dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/ic_water_20dp"
+    <ImageView
+        android:id="@+id/statusImageView"
+        android:layout_width="411dp"
+        android:layout_height="483dp"
+        app:layout_constraintBottom_toTopOf="@+id/calendarButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

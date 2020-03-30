@@ -7,6 +7,14 @@
     tools:context=".ExecriseActivity">
 
     <Button
+        android:id="@+id/backAddButton"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:background="@android:drawable/ic_input_add"
+        app:layout_constraintStart_toEndOf="@+id/backScrollView"
+        app:layout_constraintTop_toTopOf="@+id/backScrollView" />
+
+    <Button
         android:id="@+id/chestAddButton"
         android:layout_width="40dp"
         android:layout_height="100dp"
@@ -39,34 +47,25 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:text="1" />
+                    android:id="@+id/backButton1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:text="2" />
+                    android:id="@+id/backButton2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:text="3" />
+                    android:id="@+id/backButton3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:text="4" />
+                    android:id="@+id/backButton4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:text="5" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:text="6" />
             </LinearLayout>
         </HorizontalScrollView>
     </ScrollView>
@@ -128,13 +127,7 @@
         </HorizontalScrollView>
     </ScrollView>
 
-    <Button
-        android:id="@+id/backAddButton"
-        android:layout_width="40dp"
-        android:layout_height="100dp"
-        android:background="@android:drawable/ic_input_add"
-        app:layout_constraintStart_toEndOf="@+id/backScrollView"
-        app:layout_constraintTop_toTopOf="@+id/backScrollView" />
+
 
     <TextView
         android:id="@+id/textView9"
@@ -154,22 +147,6 @@
         app:layout_constraintBottom_toTopOf="@+id/backScrollView"
         app:layout_constraintStart_toStartOf="@+id/backScrollView" />
 
-    <CheckBox
-        android:id="@+id/backCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/backScrollView"
-        app:layout_constraintEnd_toStartOf="@+id/backScrollView"
-        app:layout_constraintTop_toTopOf="@+id/backScrollView" />
-
-    <CheckBox
-        android:id="@+id/chestCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/chestScrollView"
-        app:layout_constraintEnd_toStartOf="@+id/chestScrollView"
-        app:layout_constraintTop_toTopOf="@+id/chestScrollView" />
-
     <Button
         android:id="@+id/addToCalendar"
         android:layout_width="wrap_content"
@@ -181,13 +158,35 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/testing"
+    <RadioGroup
+        android:id="@+id/RadioButtonGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backScrollView"
-        tools:layout_editor_absoluteX="175dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/backScrollView"
+        app:layout_constraintEnd_toStartOf="@+id/chestScrollView"
+        app:layout_constraintTop_toTopOf="@+id/chestScrollView">
+
+        <RadioButton
+            android:id="@+id/chestRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/chestScrollView"
+            app:layout_constraintEnd_toStartOf="@+id/chestScrollView"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <RadioButton
+            android:id="@+id/backRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/backScrollView"
+            app:layout_constraintEnd_toStartOf="@+id/backScrollView"
+            app:layout_constraintTop_toTopOf="@+id/backScrollView" />
+
+    </RadioGroup>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
